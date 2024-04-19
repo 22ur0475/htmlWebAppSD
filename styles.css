@@ -1,0 +1,181 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Set minimum height of the body to 100% of viewport height */
+    position: relative; /* Ensure proper positioning for absolutely positioned elements */
+}
+
+header {
+    background-color: #4169e1;
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+footer {
+    background-color: #4169e1;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto; /* Push footer to bottom */
+}
+
+.content {
+    width: 310px;
+    height: 110px;
+    margin: 5px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(36, 59, 228, 0.69);
+    display: flex;
+    display: inline-block; /* Make key containers inline */
+    align-items: center;
+    justify-content: center;
+}
+
+
+.exploreButton {
+    width: 110px;
+    height: 100%px;
+    background-color: #4169e1;
+    color: #fff;
+    padding: 10px 0;
+    border: none;
+    border-radius:130px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.addkeybutton {
+    width: 100%px;
+    height: 100%px;
+    background-color: #4169e1;
+    color: #fff;
+    padding: 10px 0;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.addKeyContainer {
+    width: 60px; /* Changed from max-width to width */
+    height: 60px; /* Added height to make it a square */
+    position: fixed; /* Set to fixed positioning */
+    bottom: 130px; /* 20px from the bottom */
+    right: 40px; /* 20px from the right */
+    border-radius: 30%; /* Changed border-radius to 0 to make it square */
+}
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    background-color: #f0f0f0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 10px solid #2960f8;
+    width: 30%;
+    height: 60%;
+}
+/* Adjust input positioning */
+#keyName {
+    margin-bottom: 10px; /* Add some space below the input */
+    background-color: #fefefe;
+    padding: 20px;
+    border: 6px solid #2960f8;
+    width: 80%;
+    height: 4%;
+    border-radius:inherit;
+}
+
+#KeyHolder {
+    width: calc(100% - 24px); /* Make the input fill the modal width with some margin */
+    margin-bottom: 10px; /* Add some space below the input */
+    background-color: #fefefe;
+    padding: 20px;
+    border: 6px solid #2960f8;
+    width: 80%;
+    height: 4%;
+    border-radius: 0%;
+}
+#available-container {
+    display: flex;
+     -items: center; /* Center vertically */
+}
+#available:checked + label {
+    color: rgb(3, 253, 3); /* Change the color to green */
+}
+#available:checked + label::before {
+    background-color: rgb(0, 255, 0); /* Change the background color */
+}
+
+    
+#available {
+    font-size: large;
+    margin-left: 10px; /* Add some space to the left of the checkbox */
+    margin-right: 5px; /* Add some space to the right of the checkbox */
+    background-color: #d61818;
+    padding: 20px;
+    border: 10px solid #2960f8;
+    width: 7%;
+    height: 20%;
+}
+/* Adjust submit button positioning */
+#submitKey {
+    color:#ffffff;
+    background-color: #2960f8;
+    width: 110px; /* Set a specific width for the button */
+    height: 35px;
+    margin: 20px auto 0; /* Center the button horizontally and add some top margin */
+    display: block; /* Ensure the button is displayed as a block element */
+    border-radius: 0%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Additional CSS for available and not available circles */
+.key-availability::before {
+    content: '';
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.available .key-availability::before {
+    background-color: green;
+}
+
+.not-available .key-availability::before {
+    background-color: red#2960f8;
+}
